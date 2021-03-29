@@ -43,3 +43,16 @@ DROP DATABASE db_name;
 
 ===ALTERING  DATABASE
 ALTER DATABASE [db_name] [CHARACTER SET charset] [COLLATE collation];
+
+
+-- CREATE TABLE
+
+CREATE TABLE mytbl(
+
+  name CHAR(20),
+  birth DATE NOT NULL,
+  weight INT,
+  sex    ENUM('F','M')
+)ENGINE=innoDB;
+
+---
