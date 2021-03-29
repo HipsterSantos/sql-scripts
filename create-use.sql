@@ -110,3 +110,11 @@ CREATE INDEX index_name ON tbl_name (index_columns);
 CREATE FULLTEXT INDEX  index_name ON tbl_name (index_colums)
 CREATE SPATIAL INDEX index_name ON tbl_name (index_colums)
 CREATE UNIQUE INDEX index_name ON tbl_name (index_columns);
+
+
+--altering table structure
+
+ALTER TABLE mytbl CHANGE  i k MEDIUMINT UNSIGNED;
+ALTER TABLE tableName MODIFY c CHAR(20) CHARACTER SET ucs2;
+ALTER TABLE tbname ENGINE = engine_name;
+RENAME TABLE firstname TO formername,formername TO latername
