@@ -144,3 +144,21 @@ INSERT INTO t SET name = 'Gromit';
 INSERT INTO t SET name = 'Wallace';
 ROLLBACK;
 SELECT * FROM T ;
+
+
+===Mysql relatinship === 
+CREATE TABLE parent(
+  par_id INT NOT NULL,
+  PRIMARY KEY (par_id)
+)ENGINE  = INNODB;
+
+
+
+CREATE TABLE chidl(
+  child_id INT NOT NULL,
+  parent_fk
+  FOREIGN KEY (parent_fk)
+  REFERENCES parent(par_id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+)ENGINE  = INNODB;
