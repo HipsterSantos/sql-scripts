@@ -118,3 +118,10 @@ ALTER TABLE mytbl CHANGE  i k MEDIUMINT UNSIGNED;
 ALTER TABLE tableName MODIFY c CHAR(20) CHARACTER SET ucs2;
 ALTER TABLE tbname ENGINE = engine_name;
 RENAME TABLE firstname TO formername,formername TO latername
+
+
+--The inner join
+
+SELECT * FROM t1 INNER JOIN t2;
+SELECT t1.*, t2.* FROM t1 INNER JOIN t2 WHERE t1.il = ts.i2;
+SELECT t1.*,t2.* FROM t1 INNER JOIN  ON  t1.i1 = ts.i2;
