@@ -125,3 +125,22 @@ RENAME TABLE firstname TO formername,formername TO latername
 SELECT * FROM t1 INNER JOIN t2;
 SELECT t1.*, t2.* FROM t1 INNER JOIN t2 WHERE t1.il = ts.i2;
 SELECT t1.*,t2.* FROM t1 INNER JOIN  ON  t1.i1 = ts.i2;
+
+=== Transaction ===
+CREATE TABLE t (name CHAR(20),UNIQUE (name))ENGINE = InnoDB;
+
+START TRANSACTION ;
+INSERT INTO t SET name="Wilia";
+INSERT INTO t SET  name ='Wallace'
+COMMIT;
+
+SELECT * FROM t;
+
+
+--using the rollback to avoind erros
+
+START TRANSACTION ;
+INSERT INTO t SET name = 'Gromit';
+INSERT INTO t SET name = 'Wallace';
+ROLLBACK;
+SELECT * FROM T ;
