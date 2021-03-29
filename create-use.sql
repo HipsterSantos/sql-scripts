@@ -80,3 +80,15 @@ PASSWORD 'secret',
 HOST 'corn.snake.net',
 DATABASE 'sampdb'
 );
+
+
+CREATE TABLE federated_student2
+(
+name
+VARCHAR(20) NOT NULL,
+sex
+ENUM('F','M') NOT NULL,
+student_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (student_id)
+) ENGINE = FEDERATED
+CONNECTION = 'corn_sampdb_server/student';
