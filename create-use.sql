@@ -61,3 +61,22 @@ CREATE TEMPORARY TABLE tbl_name;
 
 -- FOR CREATING AN EMPTY COPY OF AN EXISTING TABLE, WRITE A STATEMENT LIKE:
 CREATE TABLE tablename LIKE cars;
+--creata table ang allow access by using connection string
+CREATE TABLE federated_student(
+
+  name varchar(20) not null,
+  sex enum('F','M') NOT NULL,
+  student_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (student_id)
+)ENGINE=FEDERATED
+CONNECTION = 'mysql://sampadm:secret@corn.snake.net/sampdb/student';
+
+
+CREATE SERVER corn_sampdb_server
+FOREIGN DATA WRAPPER mysql
+OPTIONS (
+USER 'sampadm',
+PASSWORD 'secret',
+HOST 'corn.snake.net',
+DATABASE 'sampdb'
+);
