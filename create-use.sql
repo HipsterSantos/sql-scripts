@@ -98,3 +98,15 @@ CONNECTION = 'corn_sampdb_server/student';
 DROP TABLE tbl_nam3;
 DROP TABLE tbl_name1,tbl_name2;
 DROP TABLE IF EXISTS tbl_name;
+
+--creating index by altering a table
+
+ALTER TABLE tbl_name ADD INDEX index_name (index_columns);
+ALTER TABLE tbl_name ADD UNIQUE index_name (index_colms);
+ALTER TABLE  tbl_name ADD PRIMARY KEY (index_colums);
+
+
+CREATE INDEX index_name ON tbl_name (index_columns);
+CREATE FULLTEXT INDEX  index_name ON tbl_name (index_colums)
+CREATE SPATIAL INDEX index_name ON tbl_name (index_colums)
+CREATE UNIQUE INDEX index_name ON tbl_name (index_columns);
