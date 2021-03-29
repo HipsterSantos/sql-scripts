@@ -55,4 +55,9 @@ CREATE TABLE mytbl(
   sex    ENUM('F','M')
 )ENGINE=innoDB;
 
----
+---Create a temporay tables
+
+CREATE TEMPORARY TABLE tbl_name;
+
+-- FOR CREATING AN EMPTY COPY OF AN EXISTING TABLE, WRITE A STATEMENT LIKE:
+CREATE TABLE tablename LIKE cars;
