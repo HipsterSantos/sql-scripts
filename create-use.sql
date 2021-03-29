@@ -92,3 +92,9 @@ student_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (student_id)
 ) ENGINE = FEDERATED
 CONNECTION = 'corn_sampdb_server/student';
+
+
+--droping table
+DROP TABLE tbl_nam3;
+DROP TABLE tbl_name1,tbl_name2;
+DROP TABLE IF EXISTS tbl_name;
