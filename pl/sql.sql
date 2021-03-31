@@ -19,4 +19,12 @@ Useful oracle delimiters
 . (Period) Component indicator (as in record.field or package.element)
 @ Remote database indicator (database link)
 => Association operator (named notation)
-https://github.com/HipsterSantos
+
+
+
+Block Structure
+Each PL/SQL program is a block consisting of a standard set
+of elements, identified by keywords. The block determines the scope of declared elements and how excep-
+tions are handled and propagated. A block can be anony-
+mous or named. Named blocks include functions,
+procedures, packages, and triggers.
