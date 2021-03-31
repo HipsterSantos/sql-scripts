@@ -84,3 +84,31 @@ min_order_qty       NUMBER(1) CONSTANT := 5;
 #Attributing a value using default or :=
 counter BINARY_INTEGER := 0;
 priority VARCHAR2(8)    DEFAULT 'LOW';
+
+
+
+
+#Anchored Declarions 
+
+Use the %TYPE attribute to anchor the datatype of a scalar
+variable to either another variable or to a column in a data-
+base table or view.%ROWTYPE to anchor a record’s
+declaration to a cursor or table (see the later section,
+“Records in PL/SQL,” for more details on the %ROWTYPE
+attribute).
+
+Sample of anchored declartions 
+
+DECLARE 
+    tot_sales NUMBER(20,2);
+    --anchor to a pl/sql varibla 
+    monthly_sales  tot_sales%TYPE;
+
+    --Anchor to a database colum. 
+    v_ename employee.last_name%TYPE.;
+
+    CURSOR mycur IS
+    SELECT * FROM employee 
+
+    --anchor to a cursor
+    myrec mycur%ROWTYPE;
