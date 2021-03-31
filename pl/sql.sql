@@ -68,3 +68,19 @@ in PL/SQL,” “Collections in PL/SQL,” and “Object-Oriented
 Features.”
 Reference Logical pointers to values or cursors.
 LOB Variables containing large object (LOB) locators.
+
+
+#Variables 
+
+total_sales     NUMBER(15,2);
+emp_id          VARCHAR2(9);
+company_number  NUMBER;
+book_title      VARCHAR2;
+
+
+#constants
+min_order_qty       NUMBER(1) CONSTANT := 5;
+
+#Attributing a value using default or :=
+counter BINARY_INTEGER := 0;
+priority VARCHAR2(8)    DEFAULT 'LOW';
