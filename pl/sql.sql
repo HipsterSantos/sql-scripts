@@ -58,3 +58,13 @@ BEGIN
 END show_the_date;
 
 --the above decalration is called named one 
+
+Types of pragram data
+Scalar Variables made up of a single value, such as a number, date, or
+Boolean.
+Composite Variables made up of multiple values, such as a record, collection,
+or instance of a user-defined object type. See the sections “Records
+in PL/SQL,” “Collections in PL/SQL,” and “Object-Oriented
+Features.”
+Reference Logical pointers to values or cursors.
+LOB Variables containing large object (LOB) locators.
