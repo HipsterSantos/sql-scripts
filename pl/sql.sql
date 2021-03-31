@@ -140,3 +140,20 @@ DECLARE
 
 
     #Conditional and Sequential Control
+
+    CASE region_id
+        WHEN 'NE' THEN
+            mgr_name := 'MINER';
+        WHEN 'SE' THEN
+            mgr_name := 'KooI';
+        ELSE mgr_name := 'Lane';
+    END CASE;
+
+    --casing withoud switch 
+    CASE 
+    WHEN region_id := 'eame' THEN
+        mgr_name := 'SCHMIDT';
+    WHEN division = 'sales' THEN 
+        mrg_name :='Kennedy';
+    ELSE mgr_name := 'gupta';
+    END CASE;
