@@ -112,3 +112,31 @@ DECLARE
 
     --anchor to a cursor
     myrec mycur%ROWTYPE;
+
+
+
+    #Programmer-defined subtypes 
+    sample :
+
+
+    CREATE OR REPLACE PACKAGE std_types
+    IS
+
+    -- Declare standard types as globals. 
+    SUBTYPE dollar_amt_t IS NUMBER;
+    END std_types;
+
+    CREATE OR REPLACE PROCEDURE process_money
+    IS
+        --use the global type declared above. 
+        credit std_types.dollar_amt_t;
+
+
+    SUBTYPE POSITIVE IS BINARY_INTEGER RANGE 1.. 214748647;
+    PACKAGE std_types
+    IS
+        SUBTYPE  currency_t IS NUMBER(15,2);
+    END;
+
+
+    #Conditional and Sequential Control
