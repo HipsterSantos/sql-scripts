@@ -157,3 +157,32 @@ DECLARE
         mrg_name :='Kennedy';
     ELSE mgr_name := 'gupta';
     END CASE;
+
+
+    #Loops 
+There are three types of loops: simple
+(infinite), FOR, and WHILE.You can use the EXIT statement to break out of the LOOP
+and pass control to the statement following the END LOOP.
+
+Use the CONTINUE statement (Oracle Database 11g),
+described later, to break out of the current loop iteration and
+pass control to the next loop iteration.
+
+Sample: 
+
+LOOP
+    executable_statement(s)
+END LOOP;
+
+
+LOOP
+    FETCH company_cur INTO company_rec;
+    EXIT WHEN company_cur%ROWCOUNT > 5 OR
+        company_cur%NOTFOUND; 
+        process_company(company_cur);
+END LOOP;
+
+FOR index IN 1..4
+LOOP 
+  statement here
+END LOOP;
