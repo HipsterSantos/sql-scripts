@@ -48,3 +48,13 @@ BEGIN
 END;
 
 -- the above declaration was anonymous declaration 
+
+CREATE OR REPLACE PROCEDURE show_the_date
+IS
+    today DATE DEFAULT SYSDATE;
+BEGIN 
+    --display the date 
+    DBMS_OUTPUT.PUT_LINE('Today is ' || today);
+END show_the_date;
+
+--the above decalration is called named one 
