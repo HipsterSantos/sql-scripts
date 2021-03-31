@@ -28,3 +28,23 @@ of elements, identified by keywords. The block determines the scope of declared 
 tions are handled and propagated. A block can be anony-
 mous or named. Named blocks include functions,
 procedures, packages, and triggers.
+
+#Block structure sample 
+
+Block Header 
+    IS
+       Declaration section
+    BEGIN
+        Execution section 
+    EXCEPTION
+        Exception section 
+    END;
+
+DECLARE 
+    today DATE DEFAULR SYSDATE;
+BEGIN
+ -- display the date. 
+   DBMS_OUTPUT.PUT_LINE('Today is ' || today);
+END;
+
+-- the above declaration was anonymous declaration 
