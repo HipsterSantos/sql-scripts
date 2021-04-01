@@ -43,7 +43,21 @@ CASE
 END CASE;
 
 
+DECLARE
+boolean_true BOOLEAN :=TRUE;
+booleand_false BOOLEAN := FALSE;
+boolean_null BOOLEAN;
 
+FUNCTION booleand_to_varchar2(flag IN BOOLEAN)
+    RETURN varchar2 is
+BEGIN
+    RETURN
+        CASE flag
+            WHEN TRUE THEN 'True'
+            WHEN FALSE THEN 'False'
+            ELSE 'NULL'
+    END ;
+END;
 
 
 BEGIN
