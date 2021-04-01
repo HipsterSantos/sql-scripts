@@ -1,57 +1,38 @@
--- Conditional Control statements 
+-- Conditional Control statements
 
-IF hasValue() THEN 
+IF hasValue() THEN
     makesomething(0);
-ELSE 
+ELSE
     makeNohing();
 END IF;
 
 
-IF hasValue() THEN 
+IF hasValue() THEN
     makesomething();
 ELSE IF not(hasValue) AND 3=3 THEN
     makesomething();
-ELSE 
+ELSE
   makeNothing()
-END IF 
+END IF
 
 CASE region_id
-    WHEN 'NE' THEN 
+    WHEN 'NE' THEN
         mgr_name := 'Miner';
     WHEN 'SE' THEN
         mgr_name := 'KOOI';
     ELSE mgr_name := 'LANE'; --THIS IS THE DEFAULT BLOCK
-END CASE; -- THIS IS THE ENDING OF THIS CASE 
-
-CASE cod_status
-    WHEN 0 THEN 
-        status:='Married'
-    WHEN 1 THEN
-        status:='Not Married'
-    ELSE 
-        status :='Not Married'
-END CASE;
+END CASE; -- THIS IS THE ENDING OF THIS CASE
 
 
-CASE 
-    WHEN region_id = '43' THEN 
-        mgr_name := 'Schmidt';
-    WHEN '1' is not region_id THEN 
-        mgr_name := 'Kennedy';
-
-    ELSE mgr_name := 'Gupta';
-END CASE;
-
-
-DECLARE 
+DECLARE
 boolean_true BOOLEAN :=TRUE;
 booleand_false BOOLEAN := FALSE;
 boolean_null BOOLEAN;
 
 FUNCTION booleand_to_varchar2(flag IN BOOLEAN)
-    RETURN varchar2 is 
+    RETURN varchar2 is
 BEGIN
-    RETURN 
+    RETURN
         CASE flag
             WHEN TRUE THEN 'True'
             WHEN FALSE THEN 'False'
@@ -60,7 +41,7 @@ BEGIN
 END;
 
 
-BEGIN 
+BEGIN
     DBMS_OUTPUT.PUT_LINE(booleand_to_varchar2 (booleand_true))
     DBMS_OUTPUT.PUT_LINE(booleand_true (booleand_false))
     DBMS_OUTPUT.PUT_LINE(booleand_to_varchar2 ()boolean_null)
@@ -69,19 +50,19 @@ END;
 
 
 
-DECLARE 
-    salary NUMBER := 20000; 
+DECLARE
+    salary NUMBER := 20000;
     emplyee_id NUMBER := 36325;
 
-    PROCEDURE give_bonus(emp_id IN NUMBER , bonus_amt IN NUMBER )IS 
-    BEGIN 
+    PROCEDURE give_bonus(emp_id IN NUMBER , bonus_amt IN NUMBER )IS
+    BEGIN
         DBMS_OUTPUT.PUT_LINE(emp_id);
         DBMS_OUTPUT.PUT_LINE(bonus_amt);
     END;
 
-    BEGIN 
+    BEGIN
         give_bonus(employee_id,
-             CASE 
+             CASE
              WHEN salary >= 1000 AND salary <=  20000 THEN 1500
              WHEN salary > 20000 AND  salary <= 40000 THEN 1000
              WHEN  salary > 40000 THEN 500
@@ -92,36 +73,36 @@ DECLARE
 
 
 -- Sequential Contol Statements
-syntax simple loop 
+syntax simple loop
 %ROWTYPE
-%ROWCOUNT 
+%ROWCOUNT
 %NOTFOUND
 
-LOOP 
+LOOP
     executable_statment(2)
 END LOOP;
 
 LOOP
     FETCH company_cur INTO company_rec;
-    EXIT WHEN company_cur%ROWCOUNT > 5 OR 
+    EXIT WHEN company_cur%ROWCOUNT > 5 OR
         company_cur%NOTFOUND;
     process_company(company_cur);
 END LOOP;
 
-LOOP 
+LOOP
     FETCH car_names INTO cars;
     EXIT WHEN car_names%NOTFOUND;
 END LOOP;
 -- Numeris for loop
 
 FOR loop_ind IN [REVERSE] lower..highest
-LOOP 
+LOOP
     executable_statement()
-END LOOP; 
+END LOOP;
 
-BEGIN 
+BEGIN
     FOR counter IN  1..4
-    LOOP 
+    LOOP
         DBMS_OUTPUT.PUT_LINE(current);
     END LOOP;
     DBMS_OUTPUT.NEW_LINE;
@@ -132,5 +113,3 @@ BEGIN
     END LOOP;
     DBMS_OUTPUT.NEW_LINE;
 END;
-
-
