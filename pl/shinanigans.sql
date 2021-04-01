@@ -23,6 +23,25 @@ CASE region_id
     ELSE mgr_name := 'LANE'; --THIS IS THE DEFAULT BLOCK
 END CASE; -- THIS IS THE ENDING OF THIS CASE
 
+CASE cod_status
+    WHEN 0 THEN
+        status:='Married'
+    WHEN 1 THEN
+        status:='Not Married'
+    ELSE
+        status :='Not Married'
+END CASE;
+
+
+CASE
+    WHEN region_id = '43' THEN
+        mgr_name := 'Schmidt';
+    WHEN '1' is not region_id THEN
+        mgr_name := 'Kennedy';
+
+    ELSE mgr_name := 'Gupta';
+END CASE;
+
 
 DECLARE
 boolean_true BOOLEAN :=TRUE;
