@@ -112,3 +112,25 @@ LOOP
     FETCH car_names INTO cars;
     EXIT WHEN car_names%NOTFOUND;
 END LOOP;
+-- Numeris for loop
+
+FOR loop_ind IN [REVERSE] lower..highest
+LOOP 
+    executable_statement()
+END LOOP; 
+
+BEGIN 
+    FOR counter IN  1..4
+    LOOP 
+        DBMS_OUTPUT.PUT_LINE(current);
+    END LOOP;
+    DBMS_OUTPUT.NEW_LINE;
+
+    FOR counter IN  REVERSE 1..5
+    LOOP
+        DBMS_OUTPUT.PUT(counter);
+    END LOOP;
+    DBMS_OUTPUT.NEW_LINE;
+END;
+
+
