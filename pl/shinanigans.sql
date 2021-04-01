@@ -92,4 +92,23 @@ DECLARE
 
 
 -- Sequential Contol Statements
+syntax simple loop 
+%ROWTYPE
+%ROWCOUNT 
+%NOTFOUND
 
+LOOP 
+    executable_statment(2)
+END LOOP;
+
+LOOP
+    FETCH company_cur INTO company_rec;
+    EXIT WHEN company_cur%ROWCOUNT > 5 OR 
+        company_cur%NOTFOUND;
+    process_company(company_cur);
+END LOOP;
+
+LOOP 
+    FETCH car_names INTO cars;
+    EXIT WHEN car_names%NOTFOUND;
+END LOOP;
