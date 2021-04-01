@@ -33,5 +33,15 @@ CASE cod_status
 END CASE;
 
 
+CASE 
+    WHEN region_id = '43' THEN 
+        mgr_name := 'Schmidt';
+    WHEN '1' is not region_id THEN 
+        mgr_name := 'Kennedy';
+
+    ELSE mgr_name := 'Gupta';
+END CASE;
+
+
 -- Sequential Contol Statements
 
