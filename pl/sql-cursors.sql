@@ -13,3 +13,16 @@
 --  which always has attributes such as %FOUND, %ISOPEN, %NOTFOUND, and %ROWCOUNT.
 --  The SQL cursor has additional attributes, %BULK_ROWCOUNT and %BULK_EXCEPTIONS,
 
+DECLARE 
+    total_rows  number(2);
+
+BEGIN 
+    UPDATE customers
+    SET salary = salary + 500; 
+    IF sql%notfound THEN 
+        dbms_output.put_line('no customers selected');
+    ELSE IF sql%found THEN 
+        total_rows := sql%rowcount;
+        dbms_output.put_line(total_rows || 'Customers selected');
+    END IF;
+END;
