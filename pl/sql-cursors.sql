@@ -35,4 +35,21 @@ the context area. An explicit cursor should be defined in the declaration sectio
  syntax 
 
  CURSOR cursor_name IS select_statement;
- 
+
+-- Opening the Cursor
+-- Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows returned by the SQL statement into it.
+-- For example, we will open the above defined cursor as follows −
+
+ OPEN c_customers;
+
+
+-- Fetching the Cursor
+-- Fetching the cursor involves accessing one row at a time.
+-- For example, we will fetch rows from the above-opened cursor as follows −
+
+FETCH c_customers INTO c_id,c_name,c_addr;
+
+Closing the Cursor
+Closing the cursor means releasing the allocated memory. For example, we will close the above-opened cursor as follows −
+
+CLOSE c_customers;
