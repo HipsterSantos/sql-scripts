@@ -26,3 +26,13 @@ BEGIN
         dbms_output.put_line(total_rows || 'Customers selected');
     END IF;
 END;
+
+Explicit CursorsExplicit cursors are programmer-defined cursors for gaining more control over 
+the context area. An explicit cursor should be defined in the declaration section of the PL/SQL Block.
+ It is created on a SELECT Statement which returns more than one row.
+
+
+ syntax 
+
+ CURSOR cursor_name IS select_statement;
+ 
