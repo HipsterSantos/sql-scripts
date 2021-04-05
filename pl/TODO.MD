@@ -1,7 +1,4 @@
-==
-Pl/SQL records 
-==
-PL/SQL Collection 
-
---- current Conditional statements 
---- Loops
+====review all content 
+-the basics of oracle pl/sql
+-condition statement
+-for loop and stored functions 
