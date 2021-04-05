@@ -31,3 +31,18 @@ uname varchar2(3);
 dname uname%typ;
 tot_sales number(20,2) NOT NULL DEFAULT 0;
 montly_sales  tot_sales%type default 10;
+
+
+
+TO TAKE A NOTE 
+if  a then do that;
+elsif action than do that;
+end if 
+
+varme number;
+case varme
+    when 3 then
+    varme :=33333;
+    when  3 then
+    varme:=1000000
+END CASE;
