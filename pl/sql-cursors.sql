@@ -78,3 +78,13 @@ CURSOR company_cur
     IS
     SELECT company_id FROM company; 
 
+CREATE OR REPLACE PACKAGE PACKAGE_NAME
+AS
+
+--package specification
+--package body
+
+CREATE OR REPLACE PACKAGE time_pkg IS 
+    FUNCTION GetTimestamp RETURN DATE; 
+    PRAGMA RESTRIC_REFERENCE (GetTimestamp,WNDS)
+
