@@ -3,6 +3,28 @@ quoting mechanism for string literals in both your SQL and
 PL/SQL statements. Use the characters q' (q followed by a
 straight single quote) to designate the programmer-defined
 delimiter
+//IDENTIFIERS 
+DECLARE 
+    "1 ^abc" VARCHAR2(100);
+BEGIN 
+    IF "1 ^abc" IS NULL THEN...
+END;
+this "1 ^abc" is an identifier.
+DECLARE 
+    "just do it" number 
+"just do it" is another indentifier
+how to add you own literal delimiters
+q' = this is how we add string or literal delimiter 
+for instance: 
+q'['']'
+q'<Price='3'>'
+q' !hey dude !'
+q' - ok I''m done - '
+
+
+
+
+
 
 //Datetime Interval Literals
 
