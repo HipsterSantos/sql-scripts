@@ -72,3 +72,9 @@ BEGIN
     END LOOP;
     CLOSE c_customers;
 END;
+
+
+CURSOR company_cur
+    IS
+    SELECT company_id FROM company; 
+
