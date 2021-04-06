@@ -74,3 +74,16 @@ EXIT WHEN  c >20;
 
 #continue statement
 CONTINUE label_name [WHEN boolean_expression];
+DECLARE
+TYPE dow_tab_t IS TABLE OF VARCHAR2(10);
+dow_tab dow_tab_t := dow_tab_t('Sunday'
+,'Monday','Tuesday','Wednesday','Thursday'
+,'Friday','Saturday');
+BEGIN
+<<day_loop>>
+FOR counter IN 2 .. 6 LOOP
+--Skip Wednesdays
+CONTINUE day_loop WHEN dow_tab(counter)='Wednesday';
+DBMS_OUTPUT.PUT_LINE (dow_tab(counter));
+END LOOP;
+END;
