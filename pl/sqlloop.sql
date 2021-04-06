@@ -87,3 +87,15 @@ CONTINUE day_loop WHEN dow_tab(counter)='Wednesday';
 DBMS_OUTPUT.PUT_LINE (dow_tab(counter));
 END LOOP;
 END;
+
+
+#cursor review
+
+BEGIN
+UPDATE activity SET last_accessed := SYSDATE
+WHERE UID = user_id;
+IF SQL%NOTFOUND THEN
+INSERT INTO activity_log (uid,last_accessed)
+VALUES (user_id,SYSDATE);
+END IF
+END;
