@@ -99,3 +99,20 @@ INSERT INTO activity_log (uid,last_accessed)
 VALUES (user_id,SYSDATE);
 END IF
 END;
+
+#exception handling 
+
+DECLARE 
+    exception_name EXCEPTION;
+    
+
+DECLARE
+ObjectExists EXCEPTION;
+PRAGMA EXCEPTION_INIT(ObjectExists,-955);
+sql_stmt VARCHAR2(100) := 'CREATE TABLE mydual AS SELECT
+* FROM dual';
+BEGIN
+EXECUTE IMMEDIATE sql_stmt;
+-- Ignore ORA-955 errors (object already exists)
+EXCEPTION WHEN ObjectExists THEN NULL;
+END;
