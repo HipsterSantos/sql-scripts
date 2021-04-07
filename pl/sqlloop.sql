@@ -68,3 +68,6 @@ LOOP
 END LOOP; 
 
 
+#exit when 
+EXIT [WHEN condition];
+EXIT WHEN  c >20;
