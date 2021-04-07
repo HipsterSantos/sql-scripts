@@ -71,3 +71,6 @@ END LOOP;
 #exit when 
 EXIT [WHEN condition];
 EXIT WHEN  c >20;
+
+#continue statement
+CONTINUE label_name [WHEN boolean_expression];
