@@ -57,4 +57,14 @@ IF analysis_cursor%NOTFOUND AND next_step IS NULL
 THEN
 end_of_analysis := TRUE;
 END IF;
-END LOOP;
+END LOOP;]
+
+
+#emulate repeat until 
+
+LOOP 
+    execatable_statement(s) 
+    EXIT WHEN boolean_condition;
+END LOOP; 
+
+
