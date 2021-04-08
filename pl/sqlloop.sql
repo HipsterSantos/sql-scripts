@@ -34,3 +34,11 @@ FOR loop_index IN [cursor_name | (SELECT statement)]
 LOOP
 executable_statement(s)
 END LOOP;
+
+FOR emp_re IN emp_cur
+LOOP 
+    IF emp_rec.title = ' Orcale PRgrammer'
+    THEN 
+        give_raise(emp_rec.empt_id,30)
+    END IF; 
+END LOOP; 
