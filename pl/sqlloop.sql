@@ -49,3 +49,12 @@ LOOP
     executable_statetment(s)
 END LOOP; 
 
+WHILE NOT end_of_analysis
+LOOP
+perform_analysis;
+get_next_record;
+IF analysis_cursor%NOTFOUND AND next_step IS NULL
+THEN
+end_of_analysis := TRUE;
+END IF;
+END LOOP;
