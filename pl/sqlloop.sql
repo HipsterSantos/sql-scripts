@@ -42,3 +42,10 @@ LOOP
         give_raise(emp_rec.empt_id,30)
     END IF; 
 END LOOP; 
+
+#WHILE  LOOP 
+WHILE condition 
+LOOP 
+    executable_statetment(s)
+END LOOP; 
+
