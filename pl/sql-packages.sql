@@ -43,3 +43,15 @@ begin
 return g_minbal;
 end;
 
+begin 
+select minimum_balance 
+into g_minbal
+from user_configuartion
+where username = USER; 
+
+exception 
+when NO_DATA_FOUND
+then g_minbal := null;
+end usrinfo;
+
+
