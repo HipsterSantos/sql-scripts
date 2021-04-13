@@ -26,3 +26,20 @@ executable_statements
 EXCEPTION 
 exception_handlers
 END package_name;
+
+create or replace package usrinfo 
+is 
+
+function minbal return varchar2; 
+end usrinfo;
+
+create or replace package body usrinfo
+is 
+
+g_minbal number --package data 
+function minbar return varchar2
+is 
+begin 
+return g_minbal;
+end;
+
